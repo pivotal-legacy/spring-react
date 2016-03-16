@@ -7,7 +7,7 @@ module.exports = {
     debug: true,
     output: {
         path: __dirname,
-        filename: './built/bundle.js'
+        filename: './build/cake.js'
     },
     module: {
         loaders: [
