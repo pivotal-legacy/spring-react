@@ -6,20 +6,12 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {cakes: [
-            {
-                "name" : "Apple Cake",
-                "description" : "Everything all together.",
-                "_links" : {
-                    "self" : {
-                        "href" : "http://localhost:8080/api/cakes/1"
-                    },
-                    "cake" : {
-                        "href" : "http://localhost:8080/api/cakes/1"
-                    }
-                }
-            }
-        ]};
+        this.state = {"cakes": []}
+        fetch("http://localhost:8080/api/cakes")
+            .then(response => response.json())
+            .then(data => {
+                this.setState(data["_embedded"]);
+            });
     }
 
     render() {

@@ -1,3 +1,5 @@
+all: build run
+
 build:
 	pushd src/main/resources/static/; webpack; popd
 	./gradlew build
@@ -8,8 +10,6 @@ run:
 clean:
 	pushd src/main/resources/static/; rm -rf build/; popd
 	./gradlew clean
-
-all: build run
 
 .PHONY: build
 
