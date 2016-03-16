@@ -11,3 +11,5 @@ clean:
 
 all: build run
 
+.PHONY: build
+
